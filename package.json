@@ -1,0 +1,81 @@
+{
+  "name": "app-name",
+  "version": "0.0.0.alpha.0",
+  "description": "",
+  "author": "jinghaihan",
+  "license": "MIT",
+  "homepage": "https://github.com/jinghaihan/starter-next#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinghaihan/starter-next.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jinghaihan/starter-next/issues"
+  },
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build",
+    "deps": "taze major -I",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "ui": "pnpm -F @app-name/shadcn add",
+    "db:generate": "pnpm -F @app-name/database generate",
+    "db:migrate": "pnpm -F @app-name/database migrate",
+    "db:studio": "pnpm -F @app-name/database studio",
+    "release": "bumpp",
+    "prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "react": "catalog:frontend",
+    "react-dom": "catalog:frontend",
+    "lucide-react": "catalog:icons",
+    "@better-auth/ui": "catalog:prod",
+    "next": "catalog:prod",
+    "next-intl": "catalog:prod",
+    "next-themes": "catalog:prod",
+    "shadcn": "catalog:prod",
+    "tw-animate-css": "catalog:prod",
+    "zod": "catalog:prod",
+    "@app-name/api": "workspace:*",
+    "@app-name/auth": "workspace:*",
+    "@app-name/database": "workspace:*",
+    "@app-name/i18n": "workspace:*",
+    "@app-name/shared": "workspace:*",
+    "@app-name/store": "workspace:*",
+    "@app-name/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "autoprefixer": "catalog:dev",
+    "bumpp": "catalog:dev",
+    "pncat": "catalog:dev",
+    "simple-git-hooks": "catalog:dev",
+    "taze": "catalog:dev",
+    "typescript": "catalog:dev",
+    "@tailwindcss/postcss": "catalog:frontend",
+    "tailwindcss": "catalog:frontend",
+    "@eslint-react/eslint-plugin": "catalog:lint",
+    "@octohash/eslint-config": "catalog:lint",
+    "eslint": "catalog:lint",
+    "eslint-config-next": "catalog:lint",
+    "eslint-plugin-better-tailwindcss": "catalog:lint",
+    "eslint-plugin-format": "catalog:lint",
+    "eslint-plugin-react-refresh": "catalog:lint",
+    "lint-staged": "catalog:lint",
+    "vitest": "catalog:test",
+    "@types/node": "catalog:types",
+    "@types/react": "catalog:types",
+    "@types/react-dom": "catalog:types"
+  },
+  "resolutions": {
+    "@types/react": "catalog:types",
+    "@types/react-dom": "catalog:types"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

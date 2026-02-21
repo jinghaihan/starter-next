@@ -1,0 +1,7 @@
+{
+  "name": "@app-name/i18n",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}
