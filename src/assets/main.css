@@ -1,0 +1,29 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100svh;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-geist-sans);
+}
+html.dark {
+  color-scheme: dark;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border);
+  opacity: 0.5;
+}

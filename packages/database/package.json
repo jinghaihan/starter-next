@@ -1,0 +1,31 @@
+{
+  "name": "@app-name/database",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./db": "./src/db.ts",
+    "./schemas": "./src/schemas/index.ts",
+    "./services": "./src/services/index.ts",
+    "./types": "./src/types.ts",
+    "./supabase/client": "./src/supabase/client.ts",
+    "./supabase/server": "./src/supabase/server.ts"
+  },
+  "scripts": {
+    "generate": "drizzle-kit generate",
+    "generate:auth": "better-auth/cli generate --config ../auth/src/server --output src/schemas/auth",
+    "migrate": "drizzle-kit push",
+    "studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "drizzle-orm": "catalog:backend",
+    "drizzle-zod": "catalog:backend",
+    "postgres": "catalog:backend",
+    "@supabase/ssr": "catalog:prod",
+    "@supabase/supabase-js": "catalog:prod"
+  },
+  "devDependencies": {
+    "drizzle-kit": "catalog:backend",
+    "@better-auth/cli": "catalog:dev",
+    "supabase": "catalog:dev"
+  }
+}

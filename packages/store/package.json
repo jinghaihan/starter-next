@@ -1,0 +1,11 @@
+{
+  "name": "@app-name/store",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "zustand": "catalog:frontend",
+    "nanoid": "catalog:prod"
+  }
+}

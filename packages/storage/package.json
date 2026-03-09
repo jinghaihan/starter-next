@@ -1,0 +1,11 @@
+{
+  "name": "@app-name/storage",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "catalog:prod"
+  }
+}

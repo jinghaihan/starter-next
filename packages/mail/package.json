@@ -1,0 +1,7 @@
+{
+  "name": "@app-name/mail",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

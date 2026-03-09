@@ -1,0 +1,17 @@
+{
+  "name": "@app-name/shared",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./constants": "./src/constants/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./schemas": "./src/schemas/index.ts",
+    "./types": "./src/types/index.ts",
+    "./utils": "./src/utils/index.ts"
+  },
+  "dependencies": {
+    "clsx": "catalog:prod",
+    "tailwind-merge": "catalog:prod",
+    "usehooks-ts": "catalog:prod"
+  }
+}
