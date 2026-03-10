@@ -10,9 +10,9 @@ import type {
   Subscription,
 } from '../types'
 import { randomUUID } from 'node:crypto'
-import process from 'node:process'
 import { db } from '@app-name/database'
 import { payment } from '@app-name/database/schemas'
+import { getPaymentProviderEnv } from '@app-name/env/server'
 import { and, desc, eq, isNotNull } from 'drizzle-orm'
 import Stripe from 'stripe'
 import { sendDiscordNotification } from '../notification/discord'
@@ -23,13 +23,9 @@ export class StripeProvider implements PaymentProvider {
   private webhookSecret: string
 
   constructor() {
-    const apiKey = process.env.STRIPE_SECRET_KEY
-    if (!apiKey)
-      throw new Error('Missing STRIPE_SECRET_KEY')
-
-    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
-    if (!webhookSecret)
-      throw new Error('Missing STRIPE_WEBHOOK_SECRET')
+    const env = getPaymentProviderEnv()
+    const apiKey = env.STRIPE_SECRET_KEY
+    const webhookSecret = env.STRIPE_WEBHOOK_SECRET
 
     this.stripe = new Stripe(apiKey)
     this.webhookSecret = webhookSecret

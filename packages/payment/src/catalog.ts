@@ -1,5 +1,6 @@
+import type { StripePriceEnvKey } from '@app-name/env/server'
 import type { Stripe } from 'stripe'
-import process from 'node:process'
+import { getPaymentPriceEnv } from '@app-name/env/server'
 
 export const PAYMENT_PLAN_KEYS = [
   'pro_monthly',
@@ -15,7 +16,7 @@ export type PaymentPlanKey = (typeof PAYMENT_PLAN_KEYS)[number]
 export type PaymentPlanCategory = 'subscription' | 'lifetime' | 'credits'
 
 interface PlanDefinition {
-  envKey: string
+  envKey: StripePriceEnvKey
   mode: Stripe.Checkout.SessionCreateParams.Mode
   category: PaymentPlanCategory
 }
@@ -75,7 +76,7 @@ export function resolveCheckoutPlan(rawPlanKey: string): ResolvedCheckoutPlan {
     throw new Error(`Unsupported plan key: ${rawPlanKey}`)
 
   const definition = PAYMENT_PLAN_DEFINITIONS[planKey]
-  const priceId = process.env[definition.envKey]?.trim()
+  const priceId = getPaymentPriceEnv(definition.envKey)
   if (!priceId)
     throw new Error(`Missing ${definition.envKey} for plan "${planKey}"`)
 

@@ -14,6 +14,7 @@
     "@better-auth/stripe": "catalog:prod",
     "@better-auth/ui": "catalog:prod",
     "better-auth": "catalog:prod",
-    "stripe": "catalog:prod"
+    "stripe": "catalog:prod",
+    "@app-name/env": "workspace:*"
   }
 }

@@ -175,6 +175,9 @@ importers:
       '@app-name/database':
         specifier: workspace:*
         version: link:packages/database
+      '@app-name/env':
+        specifier: workspace:*
+        version: link:packages/env
       '@app-name/i18n':
         specifier: workspace:*
         version: link:packages/i18n
@@ -296,6 +299,9 @@ importers:
 
   packages/auth:
     dependencies:
+      '@app-name/env':
+        specifier: workspace:*
+        version: link:../env
       '@better-auth/stripe':
         specifier: catalog:prod
         version: 1.4.18(@better-auth/core@1.4.18(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.21)(better-call@1.1.8(zod@4.3.6))(jose@6.1.3)(kysely@0.28.11)(nanostores@1.1.0))(better-auth@1.4.18(@prisma/client@5.22.0)(better-sqlite3@12.6.2)(drizzle-kit@0.31.9)(drizzle-orm@0.45.1(@prisma/client@5.22.0)(@types/pg@8.16.0)(better-sqlite3@12.6.2)(kysely@0.28.11)(pg@8.18.0)(postgres@3.4.8))(next@16.1.4(@babel/core@7.29.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(pg@8.18.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(vitest@4.0.18(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)(msw@2.12.10(@types/node@25.3.0)(typescript@5.9.3))(yaml@2.8.2)))(stripe@20.3.1(@types/node@25.3.0))
@@ -311,6 +317,9 @@ importers:
 
   packages/database:
     dependencies:
+      '@app-name/env':
+        specifier: workspace:*
+        version: link:../env
       '@supabase/ssr':
         specifier: catalog:prod
         version: 0.8.0(@supabase/supabase-js@2.97.0)
@@ -337,6 +346,12 @@ importers:
         specifier: catalog:dev
         version: 2.76.12
 
+  packages/env:
+    dependencies:
+      zod:
+        specifier: catalog:prod
+        version: 4.3.6
+
   packages/i18n: {}
 
   packages/mail: {}
@@ -346,6 +361,9 @@ importers:
       '@app-name/database':
         specifier: workspace:*
         version: link:../database
+      '@app-name/env':
+        specifier: workspace:*
+        version: link:../env
       drizzle-orm:
         specifier: catalog:backend
         version: 0.45.1(@prisma/client@5.22.0)(@types/pg@8.16.0)(better-sqlite3@12.6.2)(kysely@0.28.11)(pg@8.18.0)(postgres@3.4.8)
@@ -379,6 +397,9 @@ importers:
 
   packages/storage:
     dependencies:
+      '@app-name/env':
+        specifier: workspace:*
+        version: link:../env
       '@aws-sdk/client-s3':
         specifier: catalog:prod
         version: 3.1004.0

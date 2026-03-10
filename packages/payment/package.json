@@ -10,6 +10,7 @@
   "dependencies": {
     "drizzle-orm": "catalog:backend",
     "stripe": "catalog:prod",
-    "@app-name/database": "workspace:*"
+    "@app-name/database": "workspace:*",
+    "@app-name/env": "workspace:*"
   }
 }

@@ -41,6 +41,7 @@
     "@app-name/api": "workspace:*",
     "@app-name/auth": "workspace:*",
     "@app-name/database": "workspace:*",
+    "@app-name/env": "workspace:*",
     "@app-name/i18n": "workspace:*",
     "@app-name/mail": "workspace:*",
     "@app-name/payment": "workspace:*",

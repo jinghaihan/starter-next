@@ -1,11 +1,13 @@
-import process from 'node:process'
+import { getDatabaseEnv } from '@app-name/env/server'
 import { defineConfig } from 'drizzle-kit'
+
+const databaseEnv = getDatabaseEnv()
 
 export default defineConfig({
   schema: './src/schemas/index.ts',
   out: './src/drizzle',
   dialect: 'postgresql',
   dbCredentials: {
-    url: process.env.SUPABASE_DATABASE_URL!,
+    url: databaseEnv.SUPABASE_DATABASE_URL,
   },
 })

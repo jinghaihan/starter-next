@@ -32,7 +32,7 @@ describe('s3 storage provider', () => {
     vi.stubEnv('S3_REGION', 'auto')
 
     const { S3StorageProvider } = await import('../../packages/storage/src/provider/s3')
-    expect(() => new S3StorageProvider()).toThrow('Missing S3_ACCESS_KEY_ID')
+    expect(() => new S3StorageProvider()).toThrow('[env:storage] S3_ACCESS_KEY_ID is required')
   })
 
   it('uploads and prefers S3_PUBLIC_URL when available', async () => {

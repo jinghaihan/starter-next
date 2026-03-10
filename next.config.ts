@@ -7,6 +7,7 @@ export default withNextIntl({
     '@app-name/api',
     '@app-name/auth',
     '@app-name/database',
+    '@app-name/env',
     '@app-name/i18n',
     '@app-name/mail',
     '@app-name/payment',

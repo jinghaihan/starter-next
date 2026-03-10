@@ -1,7 +1,7 @@
-import process from 'node:process'
+import { getNotificationEnv } from '@app-name/env/server'
 
 export async function sendDiscordNotification(content: string): Promise<void> {
-  const webhookUrl = process.env.DISCORD_WEBHOOK_URL?.trim()
+  const webhookUrl = getNotificationEnv().DISCORD_WEBHOOK_URL
   if (!webhookUrl)
     return
 

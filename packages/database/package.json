@@ -21,7 +21,8 @@
     "drizzle-zod": "catalog:backend",
     "postgres": "catalog:backend",
     "@supabase/ssr": "catalog:prod",
-    "@supabase/supabase-js": "catalog:prod"
+    "@supabase/supabase-js": "catalog:prod",
+    "@app-name/env": "workspace:*"
   },
   "devDependencies": {
     "drizzle-kit": "catalog:backend",

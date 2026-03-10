@@ -1,6 +1,6 @@
 import type { StorageProvider, UploadFileParams, UploadFileResult } from '../types'
 import { randomUUID } from 'node:crypto'
-import process from 'node:process'
+import { getStorageEnv } from '@app-name/env/server'
 import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'
 
 const S3_KEY_SANITIZE_PATTERN = /[^\w/-]/g
@@ -13,24 +13,13 @@ export class S3StorageProvider implements StorageProvider {
   private publicUrl?: string
 
   constructor() {
-    const accessKeyId = process.env.S3_ACCESS_KEY_ID
-    if (!accessKeyId)
-      throw new Error('Missing S3_ACCESS_KEY_ID')
-
-    const secretAccessKey = process.env.S3_SECRET_ACCESS_KEY
-    if (!secretAccessKey)
-      throw new Error('Missing S3_SECRET_ACCESS_KEY')
-
-    const bucketName = process.env.S3_BUCKET_NAME
-    if (!bucketName)
-      throw new Error('Missing S3_BUCKET_NAME')
-
-    const region = process.env.S3_REGION
-    if (!region)
-      throw new Error('Missing S3_REGION')
-
-    const endpoint = process.env.S3_ENDPOINT?.trim() || undefined
-    const publicUrl = process.env.S3_PUBLIC_URL?.trim() || undefined
+    const env = getStorageEnv()
+    const accessKeyId = env.S3_ACCESS_KEY_ID
+    const secretAccessKey = env.S3_SECRET_ACCESS_KEY
+    const bucketName = env.S3_BUCKET_NAME
+    const region = env.S3_REGION
+    const endpoint = env.S3_ENDPOINT
+    const publicUrl = env.S3_PUBLIC_URL
 
     this.client = new S3Client({
       region,

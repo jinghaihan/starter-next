@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
-import process from 'node:process'
 import { db } from '@app-name/database'
+import { getAuthEnv } from '@app-name/env/server'
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { username } from 'better-auth/plugins'
@@ -9,23 +9,25 @@ import { NextResponse } from 'next/server'
 
 export { toNextJsHandler } from 'better-auth/next-js'
 
+const authEnv = getAuthEnv()
+
 const socialProviders = {
-  github: process.env.GITHUB_CLIENT_ID && process.env.GITHUB_CLIENT_SECRET
+  github: authEnv.GITHUB_CLIENT_ID && authEnv.GITHUB_CLIENT_SECRET
     ? {
-        clientId: process.env.GITHUB_CLIENT_ID,
-        clientSecret: process.env.GITHUB_CLIENT_SECRET,
+        clientId: authEnv.GITHUB_CLIENT_ID,
+        clientSecret: authEnv.GITHUB_CLIENT_SECRET,
       }
     : undefined,
-  google: process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
+  google: authEnv.GOOGLE_CLIENT_ID && authEnv.GOOGLE_CLIENT_SECRET
     ? {
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        clientId: authEnv.GOOGLE_CLIENT_ID,
+        clientSecret: authEnv.GOOGLE_CLIENT_SECRET,
       }
     : undefined,
 }
 
 export const auth = betterAuth({
-  secret: process.env.BETTER_AUTH_SECRET!,
+  secret: authEnv.BETTER_AUTH_SECRET,
   database: drizzleAdapter(db, {
     provider: 'pg',
   }),

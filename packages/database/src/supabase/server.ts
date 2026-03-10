@@ -1,13 +1,14 @@
-import process from 'node:process'
+import { getSupabaseServerEnv } from '@app-name/env/server'
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 export async function createClient() {
   const cookieStore = await cookies()
+  const env = getSupabaseServerEnv()
 
   return createServerClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_PUBLISHABLE_KEY!,
+    env.SUPABASE_URL,
+    env.SUPABASE_PUBLISHABLE_KEY,
     {
       cookies: {
         getAll() {
