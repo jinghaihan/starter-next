@@ -1,0 +1,15 @@
+{
+  "name": "@app-name/shadcn",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "add": "shadcn add"
+  },
+  "dependencies": {
+    "lucide-react": "catalog:icons",
+    "class-variance-authority": "catalog:prod",
+    "radix-ui": "catalog:prod"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "button": {
+    "dark-toggle": "暗色模式",
+    "select-langauge": "选择语言"
+  },
+  "marketing": {
+    "header": {
+      "pricing": "定价",
+      "dashboard": "控制台"
+    },
+    "landing": {
+      "badge": "Starter 模板",
+      "title": "用可直接上线的模板更快交付 SaaS。",
+      "description": "认证、支付、存储和 i18n 都已按 monorepo 包结构接好，你可以把时间放在业务而不是脚手架上。",
+      "primaryCta": "查看定价",
+      "secondaryCta": "进入 Dashboard",
+      "cards": {
+        "auth": {
+          "title": "Better Auth 就绪",
+          "description": "同时保留 GitHub 和 Google OAuth，统一由 auth 包维护。"
+        },
+        "billing": {
+          "title": "Stripe 支付链路",
+          "description": "订阅、买断、积分充值三种路径都通过同一个 payment catalog。"
+        },
+        "storage": {
+          "title": "S3 上传层",
+          "description": "上传 API 与存储 provider 解耦，app route 保持轻量可测。"
+        }
+      },
+      "newsletter": {
+        "title": "订阅模板更新",
+        "description": "我们只发送版本更新和模板变更，不发广告。",
+        "label": "邮箱地址",
+        "placeholder": "you@company.com",
+        "submit": "订阅",
+        "submitting": "订阅中...",
+        "success": "订阅状态已更新。",
+        "error": "订阅失败，请稍后重试。"
+      }
+    },
+    "pricing": {
+      "eyebrow": "定价",
+      "title": "按业务模型选择支付路径。",
+      "description": "你要求的三类支付都保留：订阅、买断和积分充值，统一走 Stripe Checkout。",
+      "subscription": {
+        "label": "订阅",
+        "title": "Pro 套餐",
+        "description": "适合持续使用的团队，支持月付和年付。",
+        "feature1": "月付 / 年付 checkout",
+        "feature2": "可在 Stripe Portal 管理订阅",
+        "monthlyCta": "月付结账",
+        "yearlyCta": "年付结账"
+      },
+      "lifetime": {
+        "label": "一次性",
+        "title": "买断",
+        "description": "一次付费永久使用，无续费账单。",
+        "feature1": "一次性 Stripe 支付",
+        "feature2": "可在 billing 状态中识别",
+        "cta": "买断结账"
+      },
+      "credits": {
+        "label": "积分",
+        "title": "积分包",
+        "description": "通过一次性支付充值积分，订阅可选。",
+        "feature1": "先提供 Basic 积分包",
+        "feature2": "复用同一条支付与 webhook 链路",
+        "basicCta": "积分包结账",
+        "more": "可继续开启更多积分包"
+      }
+    },
+    "billing": {
+      "pageTitle": "账单",
+      "pageDescription": "查看当前方案并跳转 Stripe Customer Portal。",
+      "title": "当前方案",
+      "description": "账单状态读取自 Stripe webhook 同步后的 payment 记录。",
+      "loading": "正在加载账单状态...",
+      "loadError": "账单状态加载失败。",
+      "currentPlanLabel": "当前方案：",
+      "subscriptionStatus": "订阅状态：",
+      "upgrade": "去定价页升级",
+      "manage": "管理账单",
+      "plan": {
+        "free": "免费",
+        "pro_monthly": "Pro（月付）",
+        "pro_yearly": "Pro（年付）",
+        "lifetime": "买断",
+        "credits_basic": "积分包（Basic）",
+        "credits_standard": "积分包（Standard）",
+        "credits_premium": "积分包（Premium）",
+        "credits_enterprise": "积分包（Enterprise）"
+      }
+    }
+  }
+}

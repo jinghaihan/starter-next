@@ -1,0 +1,11 @@
+{
+  "name": "@app-name/analytics",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@vercel/analytics": "catalog:prod",
+    "@vercel/speed-insights": "catalog:prod"
+  }
+}

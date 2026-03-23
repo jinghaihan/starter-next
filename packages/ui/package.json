@@ -1,0 +1,7 @@
+{
+  "name": "@app-name/ui",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

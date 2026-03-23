@@ -1,0 +1,12 @@
+{
+  "name": "@app-name/mail",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "resend": "catalog:prod",
+    "zod": "catalog:prod",
+    "@app-name/env": "workspace:*"
+  }
+}

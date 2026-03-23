@@ -1,0 +1,96 @@
+{
+  "button": {
+    "dark-toggle": "Toggle Dark Mode",
+    "select-langauge": "Select Language"
+  },
+  "marketing": {
+    "header": {
+      "pricing": "Pricing",
+      "dashboard": "Dashboard"
+    },
+    "landing": {
+      "badge": "Starter Template",
+      "title": "Ship SaaS faster with a production-ready starter.",
+      "description": "Auth, billing, storage and i18n are already wired into a monorepo package structure, so you can focus on product logic instead of scaffold work.",
+      "primaryCta": "View Pricing",
+      "secondaryCta": "Open Dashboard",
+      "cards": {
+        "auth": {
+          "title": "Better Auth Ready",
+          "description": "Keep GitHub and Google OAuth enabled while sharing one auth package across apps."
+        },
+        "billing": {
+          "title": "Stripe Workflows",
+          "description": "Subscription, lifetime and credits one-time checkout are supported through one payment catalog."
+        },
+        "storage": {
+          "title": "S3 Upload Layer",
+          "description": "Upload API and storage package are separated, so app routes stay thin and testable."
+        }
+      },
+      "newsletter": {
+        "title": "Get product updates",
+        "description": "We send release notes and template updates. No spam.",
+        "label": "Email address",
+        "placeholder": "you@company.com",
+        "submit": "Subscribe",
+        "submitting": "Subscribing...",
+        "success": "Subscription updated successfully.",
+        "error": "Failed to subscribe. Please try again."
+      }
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title": "Pick one payment path for each business model.",
+      "description": "You asked for three payment categories. Subscription, lifetime and credits are all available via Stripe checkout.",
+      "subscription": {
+        "label": "Subscription",
+        "title": "Pro Plan",
+        "description": "Recurring access for teams that need stable monthly or yearly billing.",
+        "feature1": "Monthly and yearly checkout",
+        "feature2": "Managed subscription in Stripe portal",
+        "monthlyCta": "Checkout Monthly",
+        "yearlyCta": "Checkout Yearly"
+      },
+      "lifetime": {
+        "label": "One-time",
+        "title": "Lifetime",
+        "description": "Single payment for permanent access with no recurring invoice.",
+        "feature1": "One-time Stripe payment",
+        "feature2": "Shows in billing status",
+        "cta": "Checkout Lifetime"
+      },
+      "credits": {
+        "label": "Credits",
+        "title": "Credits Package",
+        "description": "Top up credits with one-time payment while keeping subscription optional.",
+        "feature1": "Basic credit package checkout",
+        "feature2": "Same payment + webhook pipeline",
+        "basicCta": "Checkout Credits",
+        "more": "More packages can be enabled"
+      }
+    },
+    "billing": {
+      "pageTitle": "Billing",
+      "pageDescription": "Review your active plan and jump to Stripe customer portal.",
+      "title": "Current Plan",
+      "description": "Billing status is read from the payment records synced by Stripe webhook.",
+      "loading": "Loading billing status...",
+      "loadError": "Failed to load billing status.",
+      "currentPlanLabel": "Current plan:",
+      "subscriptionStatus": "Subscription status:",
+      "upgrade": "Upgrade from Pricing",
+      "manage": "Manage Billing",
+      "plan": {
+        "free": "Free",
+        "pro_monthly": "Pro (Monthly)",
+        "pro_yearly": "Pro (Yearly)",
+        "lifetime": "Lifetime",
+        "credits_basic": "Credits (Basic)",
+        "credits_standard": "Credits (Standard)",
+        "credits_premium": "Credits (Premium)",
+        "credits_enterprise": "Credits (Enterprise)"
+      }
+    }
+  }
+}
